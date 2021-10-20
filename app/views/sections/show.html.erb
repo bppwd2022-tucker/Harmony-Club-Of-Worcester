@@ -1,0 +1,15 @@
+<div class="text-center">
+	<h1><%= @section.title %></h1>
+	<h1>Section ID: <%= @section.id %></h1>
+	<h2>location: <%= @section.location %></h2>
+	<h2>visable: <%= @section.visible %></h2>
+	<h2>position: <%= @section.position %></h2>
+	<h1>Pages:</h1>
+	<ul class="list-group">
+		<% @section.pages.each do |p| %>
+	    	<li class="list-group-item"><%= p.title %></li>
+	    <% end %>
+	</ul>
+	<%= link_to "All Sections", sections_path %>
+</div>
+

@@ -1,0 +1,28 @@
+<%= form_with model: section do |form| %>
+  <div>
+    <%= form.label :location %><br>
+    <%= form.text_field :location %>
+  </div>
+
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+    <% section.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :visable %><br>
+    <%= form.text_field :visable %>
+  </div>
+
+  <div>
+    <%= form.label :position %><br>
+    <%= form.text_field :position %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
