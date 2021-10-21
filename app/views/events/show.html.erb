@@ -1,14 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+<div class="card">
+  <div class="card-body">
+    <h2 class="card-title">Event</h2>
 
-<p>
-  <strong>Details:</strong>
-  <%= @event.details %>
-</p>
+    <p class="card-text">
+      <strong>Title:</strong>
+      <%= @event.title %>
+    </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+    <p class="card-text">
+      <strong>Details:</strong>
+      <%= @event.details %>
+    </p>
+
+    <%= link_to 'Edit', edit_event_path(@event), class: "btn btn-primary"  %> |
+    <%= link_to 'Back', events_path, class: "btn btn-primary"  %>
+  </div>
+</div>
