@@ -1,28 +1,42 @@
-<%= form_with model: section do |form| %>
-  <div>
-    <%= form.label :location %><br>
-    <%= form.text_field :location %>
-  </div>
+<%= form_with(model: section) do |form| %>
+  <% if section.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(section.errors.count, "error") %> prohibited this section from being saved:</h2>
 
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-    <% section.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
+      <ul>
+        <% section.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-  <div>
-    <%= form.label :visable %><br>
-    <%= form.text_field :visable %>
-  </div>
+  <form>
+    <div class="mb-3">
+      <label for="locationInput" class="form-label"><%= form.label :location %></label>
+      <%= form.text_field :location, class: "form-control", id: "locationInput"  %>
+    </div>
 
-  <div>
-    <%= form.label :position %><br>
-    <%= form.text_field :position %>
-  </div>
+    <div class="mb-3">
+      <label for="titleInput" class="form-label"><%= form.label :title %></label>
+      <%= form.text_field :title, class: "form-control", id: "titleInput"  %>
+    </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+    <div class="mb-3">
+      <label class="form-check-label" for="visableCheck"><%= form.label :visible %></label>
+      <%= form.check_box :visible, class: "form-check-input", id: "visableCheck"  %>
+    </div>
+
+    <div class="mb-3">
+      <label for="positionInput" class="form-label"><%= form.label :position %></label>
+      <%= form.number_field :position, class: "form-control", id: "positionInput"  %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.submit class: "btn btn-primary"%>
+    </div>
+
+  </form>
+
 <% end %>
+

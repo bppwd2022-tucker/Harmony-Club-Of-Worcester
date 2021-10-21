@@ -1,15 +1,30 @@
-<div class="text-center">
-	<h1><%= @section.title %></h1>
-	<h1>Section ID: <%= @section.id %></h1>
-	<h2>location: <%= @section.location %></h2>
-	<h2>visable: <%= @section.visible %></h2>
-	<h2>position: <%= @section.position %></h2>
-	<h1>Pages:</h1>
-	<ul class="list-group">
-		<% @section.pages.each do |p| %>
-	    	<li class="list-group-item"><%= p.title %></li>
-	    <% end %>
-	</ul>
-	<%= link_to "All Sections", sections_path %>
-</div>
+<p id="notice"><%= notice %></p>
 
+<div class="card">
+  <div class="card-body">
+    <h2 class="card-title">Section</h2>
+
+    <p class="card-text">
+      <strong>Location:</strong>
+      <%= @section.location %>
+    </p>
+
+    <p class="card-text">
+      <strong>Title:</strong>
+      <%= @section.title %>
+    </p>
+
+    <p class="card-text">
+      <strong>Visible:</strong>
+      <%= @section.visible %>
+    </p>
+
+    <p class="card-text">
+      <strong>Position:</strong>
+      <%= @section.position %>
+    </p>
+
+    <%= link_to 'Edit', edit_section_path(@section), class: "btn btn-primary" %> |
+    <%= link_to 'Back', sections_path, class: "btn btn-primary"%>
+  </div>
+</div>

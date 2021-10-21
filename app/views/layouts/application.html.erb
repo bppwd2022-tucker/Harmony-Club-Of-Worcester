@@ -38,15 +38,37 @@
               </li>
             <% end %>
             
+            <!-- Crud Controllers -->
+
             <li class="nav-item">
-              <a class="nav-link" href="#"><%= link_to "CRUD", sections_path %></a>
+              <a class="nav-link" href="#"><%= link_to "Sections", sections_path %></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#"><%= link_to "Pages", pages_path %></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#"><%= link_to "Events", events_path %></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#"><%= link_to "Albums", sections_path %></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#"><%= link_to "Photos", pages_path %></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#"><%= link_to "Sponsors", events_path %></a>
             </li>
 
           </ul>
         </div>
       </div>
     </nav>
-    <div class = "container" style="background-color: #ffffff;">
+    <div class = "container p-3" style="background-color: #ffffff;">
       <%= yield %>
     </div>
   </body>

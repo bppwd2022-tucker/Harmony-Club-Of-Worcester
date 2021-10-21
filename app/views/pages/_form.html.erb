@@ -1,0 +1,57 @@
+<%= form_with(model: page) do |form| %>
+  <% if page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+        <% page.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <form>
+
+    <div class="mb-3">
+      <label for="titleInput" class="form-label"><%= form.label :title %></label>
+      <%= form.text_field :title, class: "form-control", id: "titleInput"  %>
+    </div>
+
+    <div class="mb-3">
+      <label for="section_idInput" class="form-label"><%= form.label :section_id %></label>
+      <%= form.number_field :section_id, class: "form-control", id: "section_idInput"%>
+    </div>
+
+    <div class="mb-3">
+      <label for="page_typeInput" class="form-label"><%= form.label :page_type %></label>
+      <%= form.text_field :page_type, class: "form-control", id: "page_typeInput"  %>
+    </div>
+
+    <div class="mb-3">
+      <label for="permalinkInput" class="form-label"><%= form.label :permalink %></label>
+      <%= form.text_field :permalink, class: "form-control", id: "permalinkInput"  %>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-check-label" for="visableCheck"><%= form.label :visible %></label>
+      <%= form.check_box :visible, class: "form-check-input", id: "visableCheck"  %>
+    </div>
+
+    <div class="mb-3">
+      <label for="positionInput" class="form-label"><%= form.label :position %></label>
+      <%= form.number_field :position, class: "form-control", id: "positionInput"%>
+    </div>
+
+    <div class="mb-3">
+      <label for="contentInput" class="form-label"><%= form.label :content %></label>
+      <%= form.text_area :content, class: "form-control", id: "contentInput", rows: "3"  %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.submit class: "btn btn-primary"%>
+    </div>
+
+  </form>
+
+<% end %>
