@@ -54,29 +54,40 @@
             
             <!-- Crud Controllers -->
 
-            <li class="nav-item">
-              <a class="nav-link" href="#"><%= link_to "Sections", sections_path %></a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                CRUD
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                <li>
+                  <%= link_to "Sections", sections_path, class: "dropdown-item" %>
+                </li>
+
+                <li>
+                  <%= link_to "Pages", pages_path, class: "dropdown-item" %>
+                </li>
+
+                <li>
+                  <%= link_to "Events", events_path, class: "dropdown-item"  %>
+                </li>
+
+                <li>
+                  <%= link_to "Albums", albums_path, class: "dropdown-item" %>
+                </li>
+
+                <li>
+                  <%= link_to "Photos", photos_path, class: "dropdown-item" %>
+                </li>
+
+                <li>
+                  <%= link_to "Sponsors", sponsors_path, class: "dropdown-item" %>
+                </li>
+
+              </ul>
             </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="#"><%= link_to "Pages", pages_path %></a>
-            </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="#"><%= link_to "Events", events_path %></a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#"><%= link_to "Albums", albums_path %></a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#"><%= link_to "Photos", photos_path %></a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#"><%= link_to "Sponsors", sponsors_path %></a>
-            </li>
 
           </ul>
         </div>

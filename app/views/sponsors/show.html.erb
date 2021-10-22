@@ -1,14 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @sponsor.title %>
-</p>
+<div class="card">
+  <div class="card-body">
+    <h2 class="card-title">Sponsor</h2>
 
-<p>
-  <strong>Website:</strong>
-  <%= @sponsor.website %>
-</p>
+    <p class="card-text">
+      <strong>Title:</strong>
+      <%= @sponsor.title %>
+    </p>
 
-<%= link_to 'Edit', edit_sponsor_path(@sponsor) %> |
-<%= link_to 'Back', sponsors_path %>
+    <p class="card-text">
+      <strong>Website:</strong>
+      <%= @sponsor.website %>
+    </p>
+
+    <%= link_to 'Edit', edit_sponsor_path(@sponsor) %> |
+    <%= link_to 'Back', sponsors_path %>
+    
+  </div>
+</div>
