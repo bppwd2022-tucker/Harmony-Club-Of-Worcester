@@ -8,6 +8,10 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= tinymce_assets %>
+    <script type="text/javascript" src="/assets/tinymce.js"></script>
+
   </head>
 
   <body style="background-color: #021f2f;">
@@ -32,7 +36,17 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <% e.pages.each do |p| %>
-                    <li><a class="dropdown-item" href="#"><%= p.title %></a></li>
+
+                    <% if p.page_type == "Basic Page" %>
+
+                      <li><%= link_to p.title, site_page_path(page.id), class: "dropdown-item" %></li>
+
+                    <% else %>
+
+                      <li><%= link_to p.title, p.content, class: "dropdown-item" %></li>
+
+                    <% end %>
+
                   <% end %>
                 </ul>
               </li>
@@ -53,15 +67,15 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#"><%= link_to "Albums", sections_path %></a>
+              <a class="nav-link" href="#"><%= link_to "Albums", albums_path %></a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#"><%= link_to "Photos", pages_path %></a>
+              <a class="nav-link" href="#"><%= link_to "Photos", photos_path %></a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#"><%= link_to "Sponsors", events_path %></a>
+              <a class="nav-link" href="#"><%= link_to "Sponsors", sponsors_path %></a>
             </li>
 
           </ul>

@@ -20,7 +20,13 @@
 
     <div class="mb-3">
       <label for="detailsInput" class="form-label"><%= form.label :details %></label>
-      <%= form.text_area :details, class: "form-control", id: "detailsInput", rows: "3"  %>
+      <%= form.text_area :details, class: "form-control tinymce", id: "detailsInput", rows: "3"  %>
+      <%= tinymce %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :photo %>
+      <%= form.file_field :photo %>
     </div>
 
     <div class="mb-3">
