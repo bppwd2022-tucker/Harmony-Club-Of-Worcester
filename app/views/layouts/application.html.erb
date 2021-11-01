@@ -28,22 +28,30 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
 
-            <% @sections.each do |e| %>
+            <% @sections.each do |s| %>
 
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <%= e.title %>
+                  <%= s.title %>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <% e.pages.each do |p| %>
+                  <% s.pages.each do |p| %>
 
                     <% if p.page_type == "Basic Page" %>
 
-                      <li><%= link_to p.title, site_page_path(page.id), class: "dropdown-item" %></li>
+                      <li><%= link_to p.title, site_page_path(id: p.id), class: "dropdown-item" %></li>
 
-                    <% else %>
+                    <% elsif p.page_type == "Internal URL" %>
 
-                      <li><%= link_to p.title, p.content, class: "dropdown-item" %></li>
+                      <li><%= link_to p.title, p.destination, class: "dropdown-item" %></li>
+
+                    <% elsif p.page_type == "External URL" %>
+
+                      <li><%= link_to p.title, p.destination, target: :_blank, class: "dropdown-item" %></li>
+
+                    <% elsif p.page_type == "Events" %>
+
+                      <li><%= link_to p.title, p.destination, class: "dropdown-item" %></li>
 
                     <% end %>
 
@@ -96,15 +104,5 @@
     <div class = "container p-3" style="background-color: #ffffff;">
       <%= yield %>
     </div>
-
-    <div class="container">
-      <div class="row row-cols-2">
-        <div class="col">Column</div>
-        <div class="col">Column</div>
-        <div class="col">Column</div>
-        <div class="col">Column</div>
-      </div>
-    </div>
-    
   </body>
 </html>

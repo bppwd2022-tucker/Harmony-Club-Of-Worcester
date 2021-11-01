@@ -14,9 +14,16 @@
       <%= @photo.title %>
     </p>
 
+    <strong>Photo:</strong>
+    <% if @photo.photo.attached? %>
+      <%= image_tag @photo.photo %>
+    <% else %>
+      <p>PHOTO IS NOT ATTACHED</p>
+    <% end %>
+
     <p class="card-text">
       <strong>Description:</strong>
-      <%= @photo.description %>
+      <%= raw @photo.description %>
     </p>
 
     <%= link_to 'Edit', edit_photo_path(@photo), class: "btn btn-primary" %> |

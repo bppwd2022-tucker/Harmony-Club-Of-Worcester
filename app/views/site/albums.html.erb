@@ -1,0 +1,16 @@
+<% @albums.each do |album| %>
+
+  <div class="col-3">
+    <div class="row">
+      <% if album.photos.first.photo.attached? %>
+        <%= image_tag album.photos.first.photo %>
+      <% else %>
+        <p>PHOTO IS NOT ATTACHED</p>
+      <% end %>
+    </div>
+    <div class="row">
+      <h1><%= link_to album.title, site_photos_path, class: "dropdown-item" %></h1>
+    </div>
+  </div>
+
+<% end %>

@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   #resources :pages
   devise_for :users
   get 'site/home'
+  get 'site/page'
+  get 'site/events'
+  get 'site/albums'
+  get 'site/photos'
 
   resources :sections
   resources :pages

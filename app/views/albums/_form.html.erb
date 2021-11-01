@@ -20,9 +20,10 @@
 
     <div class="mb-3">
       <label for="descriptionInput" class="form-label"><%= form.label :description %></label>
-      <%= form.text_area :description, class: "form-control", id: "descriptionInput", rows: "3"  %>
+      <%= form.text_area :description, class: "form-control tinymce", id: "descriptionInput", rows: "3"  %>
+      <%= tinymce %>
     </div>
-
+    
     <div class="mb-3">
       <%= form.submit class: "btn btn-primary"%>
     </div>

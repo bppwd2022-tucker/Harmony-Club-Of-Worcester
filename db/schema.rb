@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2021_10_22_121421) do
     t.string "permalink"
     t.boolean "visible"
     t.integer "position"
+    t.text "destination"
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

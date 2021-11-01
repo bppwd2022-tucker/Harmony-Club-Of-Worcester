@@ -44,8 +44,14 @@
     </div>
 
     <div class="mb-3">
-      <label for="contentInput" class="form-label"><%= form.label :content %></label>
-      <%= form.text_area :content, class: "form-control", id: "contentInput", rows: "3"  %>
+      <label for="destinationInput" class="form-label"><%= form.label :destination %></label>
+      <%= form.text_field :destination, class: "form-control", id: "destinationInput"  %>
+    </div>
+
+    <div class="mb-3">
+      <label for="contentInput" class="form-label"><%= form.label :details %></label>
+      <%= form.text_area :content, class: "form-control tinymce", id: "contentInput", rows: "3"  %>
+      <%= tinymce %>
     </div>
 
     <div class="mb-3">
