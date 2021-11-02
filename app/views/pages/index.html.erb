@@ -27,7 +27,7 @@
         <td><%= page.visible %></td>
         <td><%= page.position %></td>
         <td><%= page.destination %></td>
-        <td><%= page.content %></td>
+        <td><%= truncate(page.content, length: 25) %></td>
         <td><%= link_to 'Show', page %></td>
         <td><%= link_to 'Edit', edit_page_path(page) %></td>
         <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>

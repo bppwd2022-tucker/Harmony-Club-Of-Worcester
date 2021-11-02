@@ -1,14 +1,14 @@
 <% @events.each do |event| %>
 
-  <div class="row">
-    <div class="col-6">
+  <div class="row pb-3">
+    <div class="col-6 ">
       <% if event.photo.attached? %>
-        <%= image_tag event.photo, size: "542x192", alt: "..." %>
+        <%= image_tag event.photo, class: "w-100", size: "542x192", alt: "..." %>
       <% else %>
         <p>PHOTO IS NOT ATTACHED</p>
       <% end %>
     </div>
-    <div class="col-6">
+    <div class="col-6 align-center">
       <h1><%= event.title %></h1>
       <%= raw event.details %>
     </div>

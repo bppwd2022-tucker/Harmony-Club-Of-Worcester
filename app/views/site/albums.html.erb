@@ -1,16 +1,22 @@
-<% @albums.each do |album| %>
+<div class="row text-center">
+  <% @albums.each do |album| %>
 
-  <div class="col-3">
-    <div class="row">
-      <% if album.photos.first.photo.attached? %>
-        <%= image_tag album.photos.first.photo %>
-      <% else %>
-        <p>PHOTO IS NOT ATTACHED</p>
-      <% end %>
+    <div class="col-3">
+      <div class="row">
+        <% if album.photos.length() > 0 %>
+          <% if album.photos.first.photo.attached? %>
+            <%= image_tag album.photos.first.photo %>
+          <% else %>
+            <%= image_tag "SampleAlbumPhoto.png" %>
+          <% end %>
+        <% else %>
+          <%= image_tag "SampleAlbumPhoto.png" %>
+        <% end %>
+      </div>
+      <div class="row">
+        <h1><%= link_to album.title, site_photos_path(album_id: album.id), class: "dropdown-item" %></h1>
+      </div>
     </div>
-    <div class="row">
-      <h1><%= link_to album.title, site_photos_path, class: "dropdown-item" %></h1>
-    </div>
-  </div>
 
-<% end %>
+  <% end %>
+</div>

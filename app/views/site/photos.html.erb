@@ -1,16 +1,19 @@
-<% @photos.each do |photo| %>
+<%= puts @photos %>
+<div class="row text-center">
+  <% @photos.each do |photo| %>
 
-  <div class="col-3">
-    <div class="row">
-      <% if photo.photo.attached? %>
-        <%= image_tag photo.photo %>
-      <% else %>
-        <p>PHOTO IS NOT ATTACHED</p>
-      <% end %>
+    <div class="col-3">
+      <div class="row">
+        <% if photo.photo.attached? %>
+          <%= image_tag photo.photo, size: "300", alt: "..." %>
+        <% else %>
+          <p>PHOTO IS NOT ATTACHED</p>
+        <% end %>
+      </div>
+      <div class="row">
+        <h1><%= photo.title%></h1>
+      </div>
     </div>
-    <div class="row">
-      <h1><%= photo.title%></h1>
-    </div>
-  </div>
 
-<% end %>
+  <% end %>
+</div>

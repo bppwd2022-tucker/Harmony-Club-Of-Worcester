@@ -53,6 +53,10 @@
 
                       <li><%= link_to p.title, p.destination, class: "dropdown-item" %></li>
 
+                    <% elsif p.page_type == "Albums" %>
+
+                      <li><%= link_to p.title, p.destination, class: "dropdown-item" %></li>
+
                     <% end %>
 
                   <% end %>
