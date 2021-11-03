@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'gallery/index'
+  get 'gallery/show'
   resources :sponsors
   resources :photos
   resources :albums

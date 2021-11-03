@@ -16,6 +16,6 @@ class SiteController < ApplicationController
   end
 
   def photos
-    @photos = Photo.where(params[:album_id])
+    @album = Album.find(params[:id])
   end
 end
