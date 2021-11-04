@@ -7,6 +7,6 @@ class ApplicationController < ActionController::Base
     end
 
     def init_sponsors
-		@sponsors = Sponsor.all
+		@sponsors = Sponsor.take(4)
     end
 end

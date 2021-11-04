@@ -1,0 +1,13 @@
+<div class="row text-center" style="background-color: #dbdbdb;">
+
+	<h3><%= link_to "Our Sponsors", site_sponsors_path, class: "dropdown-item" %></h3>
+
+	<% @sponsors.each do |sponsor| %>
+		<div class="col-3">
+			<%= image_tag "Photo.png",class: "d-inline-block", size: "100", alt: "..." %>
+	    	<div class="row"><h3><%= sponsor.title %></h3></div>
+	    </div>
+	<% end %>
+
+
+</div>

@@ -1,0 +1,11 @@
+<h1>These are our sponsors</h1>
+<div class="row text-center">
+
+	<% @sponsors.each do |sponsor| %>
+		<div class="col-3">
+			<%= image_tag "Photo.png",class: "d-inline-block", size: "100", alt: "..." %>
+	    	<div class="row"><h3><%= sponsor.title %></h3></div>
+	    </div>
+	<% end %>
+
+</div>
